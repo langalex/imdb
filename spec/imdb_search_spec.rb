@@ -1,11 +1,11 @@
 require File.dirname(__FILE__) + '/spec_helper'
 
-describe ImdbSearch do
+describe Imdb::Search do
 
   describe 'search that returns multiple movies' do
 
     before(:each) do
-      @imdb_search = ImdbSearch.new('indiana jones')
+      @imdb_search = Imdb::Search.new('indiana jones')
       @imdb_search.stub!(:open).and_return(open("#{$samples_dir}/sample_search.html"))
     end
 
@@ -20,11 +20,11 @@ describe ImdbSearch do
 
     describe "movies" do
 
-      it "should be a collection of ImdbMovie instances" do
+      it "should be a collection of Imdb::Movie instances" do
         @imdb_search.movies.should be_an_instance_of(Array)
         @imdb_search.movies.should_not be_empty
         @imdb_search.movies.each do |movie|
-          movie.should be_an_instance_of(ImdbMovie)
+          movie.should be_an_instance_of(Imdb::Movie)
         end
       end
 
@@ -56,15 +56,15 @@ describe ImdbSearch do
   describe 'search that redirects to the lone matching movie' do
 
     before(:each) do
-      @imdb_search = ImdbSearch.new('some extremely specific search for indiana jones')
+      @imdb_search = Imdb::Search.new('some extremely specific search for indiana jones')
       @imdb_search.stub!(:open).and_return(open("#{$samples_dir}/sample_movie.html"))
     end
 
     describe "movies" do
 
-      it "should be a collection containing a single ImdbMovie instance" do
+      it "should be a collection containing a single Imdb::Movie instance" do
         @imdb_search.movies.size.should == 1
-        @imdb_search.movies.first.should be_an_instance_of(ImdbMovie)
+        @imdb_search.movies.first.should be_an_instance_of(Imdb::Movie)
       end
 
       it "should have the correct ID" do
@@ -81,7 +81,7 @@ describe ImdbSearch do
   describe 'searches with potential encoding issues' do
 
     before(:each) do
-      @imdb_search = ImdbSearch.new('torrente')
+      @imdb_search = Imdb::Search.new('torrente')
       @imdb_search.stub!(:open).and_return(open("#{$samples_dir}/sample_spanish_search.html"))
     end
 

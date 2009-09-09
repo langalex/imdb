@@ -1,5 +1,5 @@
 
-ImdbMovie Indiana Jones and the Last Crusade
+Imdb::Movie Indiana Jones and the Last Crusade
 - should query IMDB url
 - should get director
 - should get the poster
@@ -19,11 +19,11 @@ ImdbMovie Indiana Jones and the Last Crusade
 - should get the tagline
 - should get the aspect ratio
 
-ImdbMovie Indiana Jones and the Last Crusade title pre-caching & get_data
+Imdb::Movie Indiana Jones and the Last Crusade title pre-caching & get_data
 - should have the original title before querying anything
 - should have the updated title after calling get_data
 
-ImdbMovie Han robado una estrella
+Imdb::Movie Han robado una estrella
 - should query IMDB url
 - should get director
 - should not get the poster
@@ -39,23 +39,23 @@ ImdbMovie Han robado una estrella
 - should get the company
 - should not get any photos
 
-ImdbSearch search that returns multiple movies
+Imdb::Search search that returns multiple movies
 - should query IMDB url
 - should not allow to change the query
 
-ImdbSearch search that returns multiple movies movies
-- should be a collection of ImdbMovie instances
+Imdb::Search search that returns multiple movies movies
+- should be a collection of Imdb::Movie instances
 - should include 'Indiana Jones and the Last Crusade'
 - should have titles
 - should not have titles with HTML tags
 - should not have duplicate movies
 
-ImdbSearch search that redirects to the lone matching movie movies
-- should be a collection containing a single ImdbMovie instance
+Imdb::Search search that redirects to the lone matching movie movies
+- should be a collection containing a single Imdb::Movie instance
 - should have the correct ID
 - should have the correct title
 
-ImdbSearch searches with potential encoding issues movies
+Imdb::Search searches with potential encoding issues movies
 - should include 'Misión en Marbella'
 
 String unescape_html

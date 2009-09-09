@@ -1,11 +1,11 @@
 require File.dirname(__FILE__) + '/spec_helper'
 
-describe ImdbMovie do
+describe Imdb::Movie do
   
   describe 'Indiana Jones and the Last Crusade' do
 
     before(:each) do
-      @imdb_movie = ImdbMovie.new('0097576', 'Indiana Jones and the Last Crusade')
+      @imdb_movie = Imdb::Movie.new('0097576', 'Indiana Jones and the Last Crusade')
       @imdb_movie.stub!(:open).and_return(open("#{$samples_dir}/sample_movie.html"))
     end
   
@@ -119,7 +119,7 @@ describe ImdbMovie do
   describe 'Han robado una estrella' do
 
     before(:each) do
-      @imdb_movie = ImdbMovie.new('0054961', 'Han robado una estrella')
+      @imdb_movie = Imdb::Movie.new('0054961', 'Han robado una estrella')
       @imdb_movie.stub!(:open).and_return(open("#{$samples_dir}/sample_incomplete_movie.html"))
     end
   

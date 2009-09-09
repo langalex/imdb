@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{imdb}
-  s.version = "0.0.7"
+  s.version = "0.0.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sergio Gil"]
-  s.date = %q{2009-05-30}
+  s.date = %q{2009-09-09}
   s.email = %q{sgilperez@gmail.com}
   s.extra_rdoc_files = [
     "README"
@@ -18,10 +18,9 @@ Gem::Specification.new do |s|
      "lib/imdb/imdb_search.rb",
      "lib/string_extensions.rb"
   ]
-  s.has_rdoc = true
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.2}
+  s.rubygems_version = %q{1.3.5}
   s.summary = %q{Internet Movie DataBase}
   s.test_files = [
     "spec/imdb_movie_spec.rb",
